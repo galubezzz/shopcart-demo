@@ -9,7 +9,7 @@ def total_pages(n_items: int, per_page: int) -> int:
 
 def get_page(items: list, page: int, per_page: int = 10) -> list:
     pages = total_pages(len(items), per_page)
-    if page < 1 or page >= pages:
+    if page < 1 or page > pages:
         raise IndexError(f"page {page} out of range (1..{pages})")
     start = (page - 1) * per_page
     return items[start : start + per_page]
