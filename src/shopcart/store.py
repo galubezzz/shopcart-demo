@@ -34,7 +34,7 @@ def get_order(order_id: int) -> Order:
 
 def get_invoice(order: Order) -> Invoice:
     """Invoice issued for an order."""
-    return INVOICES[order.customer_id]
+    return INVOICES[order.id]
 
 
 def find_product(slug: str) -> Product:
