@@ -22,3 +22,9 @@ def test_unknown_route_and_method():
 
 def test_invoice_numbers():
     assert INVOICES[1].number == "INV-0001"
+
+
+def test_get_order_returns_correct_data():
+    status, body = handle("GET", "/orders/1")
+    assert status == 200
+    assert body == {"id": 1, "customer_id": 7, "total": 24.0}
