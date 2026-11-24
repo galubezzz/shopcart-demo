@@ -23,7 +23,8 @@ def health() -> dict:
 
 
 def get_order(order_id: str) -> dict:
-    order = store.get_order(order_id)
+    # Convert the path parameter to int because the store expects an integer ID.
+    order = store.get_order(int(order_id))
     return {"id": order.id, "customer_id": order.customer_id, "total": order.total}
 
 
