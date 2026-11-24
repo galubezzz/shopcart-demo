@@ -7,3 +7,7 @@ def test_total_pages():
 
 def test_first_page():
     assert get_page(list(range(25)), 1) == list(range(10))
+
+
+def test_last_page():
+    assert get_page(list(range(25)), 3) == list(range(20, 25))
